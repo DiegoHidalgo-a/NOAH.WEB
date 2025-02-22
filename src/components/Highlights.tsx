@@ -51,7 +51,7 @@ export const Highlights: React.FC = () => {
           animation: 'fadeIn 2s ease-in-out', // Fade-in animation
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/80"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -68,7 +68,7 @@ export const Highlights: React.FC = () => {
 
         {/* Featured Video */}
         <div className="mb-16">
-          <div className="relative aspect-video rounded-2xl overflow-hidden shadow-xl">
+          <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl">
             <div className="absolute inset-0 bg-white/5 z-0"></div>
             <video
               controls
@@ -79,6 +79,9 @@ export const Highlights: React.FC = () => {
               <source src="/Noah.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
+            <div className="absolute bottom-4 left-4 bg-black/75 text-white px-3 py-1 rounded-md text-sm">
+              5:00
+            </div>
           </div>
         </div>
 
