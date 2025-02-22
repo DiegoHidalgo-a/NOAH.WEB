@@ -30,7 +30,7 @@ export const Career: React.FC = () => {
         es: "Jugué en torneos UPSL, División Premier"
       },
       image: "/ca.jpeg",
-      link: "/combine-academy"
+      link: "/pages/combine-academy"
     },
     {
       name: "Club Sport Herediano",
