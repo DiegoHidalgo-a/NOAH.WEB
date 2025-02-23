@@ -152,7 +152,7 @@ export const About: React.FC = () => {
         <div className="space-y-16">
           {/* Technical Skills */}
           <div className="relative overflow-hidden rounded-2xl" data-aos="fade-up">
-            <div className="relative h-[500px]"> {/* Increased height */}
+            <div className="relative h-[1000px]"> {/* Increased height */}
               <img 
                 src="/noaht.jpg"
                 alt="Technical Skills"
