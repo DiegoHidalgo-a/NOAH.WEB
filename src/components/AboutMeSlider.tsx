@@ -25,8 +25,8 @@ export const AboutMeSlider: React.FC = () => {
     {
       title: "CLUB SPORT HEREDIANO",
       description: {
-        en: "Currently playing in the minor leagues of first division Costa Rica soccer (UNAFUT) with Club Sport Herediano, one of the best teams in the country.",
-        es: "Jugué en las ligas menores del fútbol de primera división de Costa Rica (UNAFUT) con el Club Sport Herediano, uno de los mejores equipos del país."
+        en: "Currently playing in the minor leagues of first division Costa Rica soccer (UNAFUT) with Club Sport Herediano, the actual champion of Costa Rica.",
+        es: "Actualmente jugandi en las ligas menores del fútbol de primera división de Costa Rica (UNAFUT) con el Club Sport Herediano, el actual campeon de Costa Rica"
       },
       image: "/h3.jpg" // Replace with the correct image path
     },
