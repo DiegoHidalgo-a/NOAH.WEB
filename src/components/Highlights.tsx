@@ -76,7 +76,7 @@ export const Highlights: React.FC = () => {
               poster="/images/featured-video-thumbnail.jpg" // Thumbnail for the featured video
               aria-label="Featured highlight"
             >
-              <source src="https://www.youtube.com/watch?v=3OQzQmj7B8E" type="video/mp4" />
+              <source src="/Noah.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
             <div className="absolute bottom-4 left-4 bg-black/75 text-white px-3 py-1 rounded-md text-sm">
