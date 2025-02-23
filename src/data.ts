@@ -131,12 +131,12 @@ export const socialLinks: SocialLink[] = [
   },
   {
     platform: 'Email',
-    url: 'mailto:noah.castro@example.com',
+    url: 'mailto:noahcastropastor@gmail.com',
     icon: 'Mail'
   },
   {
     platform: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/noah-castro',
+    url: '',
     icon: 'Linkedin'
   }
 ];
