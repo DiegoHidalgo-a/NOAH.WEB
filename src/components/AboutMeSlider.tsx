@@ -81,8 +81,8 @@ export const AboutMeSlider: React.FC = () => {
     {
       title: "COMBINE ACADEMY",
       description: {
-        en: "Currently playing in Combine Academy soccer in North Carolina, United States. Playing UPSL tournament, Premier division.",
-        es: "Actualmente jugando en Combine Academy en Carolina del Norte, Estados Unidos. Jugando en el torneo UPSL, división Premier."
+        en: "Played for a year in Combine Academy soccer in North Carolina, United States. Played UPSL tournament, Premier division.",
+        es: "Jugó durante un año en Combine Academy soccer en Carolina del Norte, Estados Unidos. Jugó el torneo UPSL, división Premier."
       },
       image: "/8.jpg" // Replace with the correct image path
     }
