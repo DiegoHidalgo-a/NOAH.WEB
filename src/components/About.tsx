@@ -99,7 +99,7 @@ export const About: React.FC = () => {
   <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
     <div className="bg-white p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition-all duration-300">
       <img 
-        src="/uefa.jpg" 
+        src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?auto=format&fit=crop&q=80&w=300&h=300" 
         alt="U11 GPS Tournament Champion"
         className="w-24 h-24 object-cover mx-auto mb-4 rounded-full"
       />
@@ -107,7 +107,7 @@ export const About: React.FC = () => {
     </div>
     <div className="bg-white p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition-all duration-300">
       <img 
-        src="/uefa.jpg" 
+        src="https://images.unsplash.com/photo-1577223625816-7546f13df25d?auto=format&fit=crop&q=80&w=300&h=300" 
         alt="U12 Copa Patrick Champion"
         className="w-24 h-24 object-cover mx-auto mb-4 rounded-full"
       />
@@ -115,7 +115,7 @@ export const About: React.FC = () => {
     </div>
     <div className="bg-white p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition-all duration-300">
       <img 
-        src="/uefa.jpg" 
+        src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&q=80&w=300&h=300" 
         alt="U13 National Champion First Division, Unafut"
         className="w-24 h-24 object-cover mx-auto mb-4 rounded-full"
       />
@@ -123,7 +123,7 @@ export const About: React.FC = () => {
     </div>
     <div className="bg-white p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition-all duration-300">
       <img 
-        src="/uefa.jpg" 
+        src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?auto=format&fit=crop&q=80&w=300&h=300" 
         alt="U15 Second Place in First Division, Unafut"
         className="w-24 h-24 object-cover mx-auto mb-4 rounded-full"
       />
@@ -131,7 +131,7 @@ export const About: React.FC = () => {
     </div>
     <div className="bg-white p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition-all duration-300">
       <img 
-        src="/uefa.jpg" 
+        src="https://images.unsplash.com/photo-1577223625816-7546f13df25d?auto=format&fit=crop&q=80&w=300&h=300" 
         alt="U17 National Champion Second Division, LIASCE"
         className="w-24 h-24 object-cover mx-auto mb-4 rounded-full"
       />
@@ -139,7 +139,7 @@ export const About: React.FC = () => {
     </div>
     <div className="bg-white p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition-all duration-300">
       <img 
-        src="/uefa.jpg" 
+        src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&q=80&w=300&h=300" 
         alt="U19 Super Cup National Champion, Unafut"
         className="w-24 h-24 object-cover mx-auto mb-4 rounded-full"
       />
@@ -148,79 +148,76 @@ export const About: React.FC = () => {
   </div>
 </div>
         {/* Playing Style */}
-<div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-  {/* Technical Skills Card */}
-  <div className="p-8 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl shadow-lg transform hover:-translate-y-2 transition-all duration-300 hover:shadow-xl">
-    <img 
-      src="https://images.unsplash.com/photo-1579952363872-3e2d13e8f5f3?auto=format&fit=crop&q=80&w=300&h=300" 
-      alt="Technical Skills"
-      className="w-16 h-16 object-cover mx-auto mb-4 rounded-full border-2 border-blue-200"
-    />
-    <h3 className="text-xl font-semibold mb-4 text-center text-blue-800">
-      {language === 'en' ? 'Technical Skills' : 'Habilidades Técnicas'}
-    </h3>
-    <ul className="space-y-3">
-      {playerData.strengths.technical[language].map((skill, index) => (
-        <li key={index} className="flex items-center text-gray-700">
-          <img 
-            src="https://images.unsplash.com/photo-1579952363872-3e2d13e8f5f3?auto=format&fit=crop&q=80&w=50&h=50" 
-            alt="Skill Icon"
-            className="w-5 h-5 object-cover rounded-full mr-2 border border-blue-200"
-          />
-          <span className="text-sm md:text-base">{skill}</span>
-        </li>
-      ))}
-    </ul>
-  </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <div className="p-8 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl shadow-lg transform hover:-translate-y-2 transition-all duration-300">
+            <img 
+              src="https://images.unsplash.com/photo-1577223625816-7546f13df25d?auto=format&fit=crop&q=80&w=300&h=300" 
+              alt="Technical Skills"
+              className="w-16 h-16 object-cover mx-auto mb-4 rounded-full"
+            />
+            <h3 className="text-xl font-semibold mb-4">
+              {language === 'en' ? 'Technical Skills' : 'Habilidades Técnicas'}
+            </h3>
+            <ul className="space-y-3">
+              {playerData.strengths.technical[language].map((skill, index) => (
+                <li key={index} className="flex items-center text-gray-700">
+                  <img 
+                    src="https://images.unsplash.com/photo-1577223625816-7546f13df25d?auto=format&fit=crop&q=80&w=50&h=50" 
+                    alt="Skill Icon"
+                    className="w-5 h-5 object-cover rounded-full mr-2"
+                  />
+                  {skill}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="p-8 bg-gradient-to-br from-green-50 to-green-100 rounded-xl shadow-lg transform hover:-translate-y-2 transition-all duration-300">
+            <img 
+              src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&q=80&w=300&h=300" 
+              alt="Physical Abilities"
+              className="w-16 h-16 object-cover mx-auto mb-4 rounded-full"
+            />
+            <h3 className="text-xl font-semibold mb-4">
+              {language === 'en' ? 'Physical Abilities' : 'Capacidades Físicas'}
+            </h3>
+            <ul className="space-y-3">
+              {playerData.strengths.physical[language].map((skill, index) => (
+                <li key={index} className="flex items-center text-gray-700">
+                  <img 
+                    src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&q=80&w=50&h=50" 
+                    alt="Skill Icon"
+                    className="w-5 h-5 object-cover rounded-full mr-2"
+                  />
+                  {skill}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="p-8 bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl shadow-lg transform hover:-translate-y-2 transition-all duration-300">
+            <img 
+              src="https://images.unsplash.com/photo-1546483875-ad9014c88eba?auto=format&fit=crop&q=80&w=300&h=300" 
+              alt="Mental Strengths"
+              className="w-16 h-16 object-cover mx-auto mb-4 rounded-full"
+            />
+            <h3 className="text-xl font-semibold mb-4">
+              {language === 'en' ? 'Mental Strengths' : 'Fortalezas Mentales'}
+            </h3>
+            <ul className="space-y-3">
+              {playerData.strengths.mental[language].map((skill, index) => (
+                <li key={index} className="flex items-center text-gray-700">
+                  <img 
+                    src="https://images.unsplash.com/photo-1546483875-ad9014c88eba?auto=format&fit=crop&q=80&w=50&h=50" 
+                    alt="Skill Icon"
+                    className="w-5 h-5 object-cover rounded-full mr-2"
+                  />
+                  {skill}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
 
-  {/* Physical Abilities Card */}
-  <div className="p-8 bg-gradient-to-br from-green-50 to-green-100 rounded-xl shadow-lg transform hover:-translate-y-2 transition-all duration-300 hover:shadow-xl">
-    <img 
-      src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=300&h=300" 
-      alt="Physical Abilities"
-      className="w-16 h-16 object-cover mx-auto mb-4 rounded-full border-2 border-green-200"
-    />
-    <h3 className="text-xl font-semibold mb-4 text-center text-green-800">
-      {language === 'en' ? 'Physical Abilities' : 'Capacidades Físicas'}
-    </h3>
-    <ul className="space-y-3">
-      {playerData.strengths.physical[language].map((skill, index) => (
-        <li key={index} className="flex items-center text-gray-700">
-          <img 
-            src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=50&h=50" 
-            alt="Skill Icon"
-            className="w-5 h-5 object-cover rounded-full mr-2 border border-green-200"
-          />
-          <span className="text-sm md:text-base">{skill}</span>
-        </li>
-      ))}
-    </ul>
-  </div>
-
-  {/* Mental Strengths Card */}
-  <div className="p-8 bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl shadow-lg transform hover:-translate-y-2 transition-all duration-300 hover:shadow-xl">
-    <img 
-      src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=300&h=300" 
-      alt="Mental Strengths"
-      className="w-16 h-16 object-cover mx-auto mb-4 rounded-full border-2 border-purple-200"
-    />
-    <h3 className="text-xl font-semibold mb-4 text-center text-purple-800">
-      {language === 'en' ? 'Mental Strengths' : 'Fortalezas Mentales'}
-    </h3>
-    <ul className="space-y-3">
-      {playerData.strengths.mental[language].map((skill, index) => (
-        <li key={index} className="flex items-center text-gray-700">
-          <img 
-            src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=50&h=50" 
-            alt="Skill Icon"
-            className="w-5 h-5 object-cover rounded-full mr-2 border border-purple-200"
-          />
-          <span className="text-sm md:text-base">{skill}</span>
-        </li>
-      ))}
-    </ul>
-  </div>
-</div>
       {/* Slider Section */}
       <div className="mt-20">
         <AboutMeSlider />
