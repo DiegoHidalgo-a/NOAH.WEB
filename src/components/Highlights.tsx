@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useLanguage } from './LanguageContext';
-import { Play, Award, Star } from 'lucide-react';
+import { Play } from 'lucide-react';
 import AOS from 'aos'; // Import AOS library
 import 'aos/dist/aos.css'; // Import AOS styles
 
@@ -17,21 +17,21 @@ export const Highlights: React.FC = () => {
   const highlights = [
     {
       title: { en: 'Full Game with Combine Academy', es: 'Partido Completo con Combine Academy' },
-      video: 'url(/https://www.youtube.com/live/0kt7w6TEjp8)', // Local video file
+      video: 'https://www.youtube.com/live/x_BfF-lTeZM?si=vr-cx--JsFymLUe4', // YouTube video link
       thumbnail: '/noah4.webp', // Local thumbnail
-      duration: '3:45',
+      duration: '1:23:45', // Example duration
     },
     {
       title: { en: 'Skills & Assists', es: 'Habilidades y Asistencias' },
-      video: '/Noah.mp4', // Local video file
+      video: 'https://www.youtube.com/live/x_BfF-lTeZM?si=vr-cx--JsFymLUe4', // YouTube video link
       thumbnail: '/Noah6.jpg', // Local thumbnail
-      duration: '4:20',
+      duration: '1:23:45', // Example duration
     },
     {
       title: { en: 'Season Highlights', es: 'Destacados de Temporada' },
-      video: '/Noah.mp4', // Local video file
+      video: 'https://www.youtube.com/live/HDbW8TbAMt8', // YouTube video link
       thumbnail: '/Noah7.jpg', // Local thumbnail
-      duration: '5:15',
+      duration: '1:23:45', // Example duration
     },
   ];
 
@@ -69,18 +69,15 @@ export const Highlights: React.FC = () => {
         {/* Featured Video */}
         <div className="mb-16">
           <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl">
-            <div className="absolute inset-0 bg-white/5 z-0"></div>
-            <video
-              controls
+            <iframe
+              src="https://www.youtube.com/embed/x_BfF-lTeZM?si=vr-cx--JsFymLUe4" // YouTube embed URL
               className="w-full h-full object-cover"
-              poster="/images/featured-video-thumbnail.jpg" // Thumbnail for the featured video
-              aria-label="Featured highlight"
-            >
-              <source src="/Noah.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+              title="Featured highlight"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
             <div className="absolute bottom-4 left-4 bg-black/75 text-white px-3 py-1 rounded-md text-sm">
-              5:00
+              1:23:45
             </div>
           </div>
         </div>
@@ -94,16 +91,13 @@ export const Highlights: React.FC = () => {
               data-aos="fade-up"
             >
               <div className="relative">
-                <div className="absolute inset-0 bg-white/5 z-0"></div>
-                <video
-                  controls
+                <iframe
+                  src={highlight.video.replace('live', 'embed')} // Convert YouTube live URL to embed URL
                   className="w-full h-48 object-cover"
-                  poster={highlight.thumbnail} // Thumbnail for the video
-                  aria-label={highlight.title[language]}
-                >
-                  <source src={highlight.video} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+                  title={highlight.title[language]}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
                 <div className="absolute bottom-2 right-2 bg-black/75 text-white px-2 py-1 rounded-md text-sm">
                   {highlight.duration}
                 </div>
@@ -123,7 +117,8 @@ export const Highlights: React.FC = () => {
             </div>
           ))}
         </div>
-      </div>      
+      </div>
+
       {/* Add custom CSS for fadeIn animation */}
       <style jsx>{`
         @keyframes fadeIn {
