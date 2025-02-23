@@ -152,7 +152,7 @@ export const About: React.FC = () => {
         <div className="space-y-16">
           {/* Technical Skills */}
           <div className="relative overflow-hidden rounded-2xl" data-aos="fade-up">
-            <div className="relative h-[500px]"> {/* Increased height */}
+            <div className="relative h-[700px]"> {/* Increased height */}
               <img 
                 src="/noaht.jpg"
                 alt="Technical Skills"
@@ -177,7 +177,7 @@ export const About: React.FC = () => {
 
           {/* Physical Abilities */}
           <div className="relative overflow-hidden rounded-2xl" data-aos="fade-up">
-            <div className="relative h-[500px]"> {/* Increased height */}
+            <div className="relative h-[700px]"> {/* Increased height */}
               <img 
                 src="/noahl.jpg"
                 alt="Physical Abilities"
@@ -202,7 +202,7 @@ export const About: React.FC = () => {
 
           {/* Mental Strengths */}
           <div className="relative overflow-hidden rounded-2xl" data-aos="fade-up">
-            <div className="relative h-[500px]"> {/* Increased height */}
+            <div className="relative h-[700px]"> {/* Increased height */}
               <img 
                 src="/noahf.jpg"
                 alt="Mental Strengths"
