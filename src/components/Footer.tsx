@@ -53,10 +53,10 @@ export const Footer: React.FC = () => {
               <a href="https://www.instagram.com/noah_castro_/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <Instagram size={24} />
               </a>
-              <a href="https://twitter.com/carlosrodriguez" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+              <a href="" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <Twitter size={24} />
               </a>
-              <a href="https://linkedin.com/in/carlosrodriguez" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+              <a href="" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <Linkedin size={24} />
               </a>
               <a href="mailto:contact@carlosrodriguez.com" className="text-gray-400 hover:text-white transition-colors">
