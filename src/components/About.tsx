@@ -225,11 +225,11 @@ export const About: React.FC = () => {
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Slider Section */}
-        <div className="mt-20">
-          <AboutMeSlider />
-        </div>
+      {/* Full-width Slider Section */}
+      <div className="w-full mt-20">
+        <AboutMeSlider />
       </div>
     </section>
   );
