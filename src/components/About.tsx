@@ -89,64 +89,76 @@ export const About: React.FC = () => {
         </div>
 
         {/* Palmarés Section */}
-<div className="mb-16">
-  <h2 className="text-4xl font-bold text-center mb-12 relative">
-    <span className="relative z-10">
-      {language === 'en' ? 'Palmarés' : 'Palmarés'}
-      <div className="absolute -bottom-2 left-0 w-full h-3 bg-yellow-500 opacity-30"></div>
-    </span>
-  </h2>
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-    <div className="bg-white p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition-all duration-300">
-      <img 
-        src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?auto=format&fit=crop&q=80&w=300&h=300" 
-        alt="U11 GPS Tournament Champion"
-        className="w-24 h-24 object-cover mx-auto mb-4 rounded-full"
-      />
-      <h3 className="text-xl font-bold text-center mb-4">U11 GPS Tournament Champion</h3>
-    </div>
-    <div className="bg-white p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition-all duration-300">
-      <img 
-        src="https://images.unsplash.com/photo-1577223625816-7546f13df25d?auto=format&fit=crop&q=80&w=300&h=300" 
-        alt="U12 Copa Patrick Champion"
-        className="w-24 h-24 object-cover mx-auto mb-4 rounded-full"
-      />
-      <h3 className="text-xl font-bold text-center mb-4">U12 Copa Patrick Champion</h3>
-    </div>
-    <div className="bg-white p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition-all duration-300">
-      <img 
-        src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&q=80&w=300&h=300" 
-        alt="U13 National Champion First Division, Unafut"
-        className="w-24 h-24 object-cover mx-auto mb-4 rounded-full"
-      />
-      <h3 className="text-xl font-bold text-center mb-4">U13 National Champion First Division, Unafut</h3>
-    </div>
-    <div className="bg-white p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition-all duration-300">
-      <img 
-        src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?auto=format&fit=crop&q=80&w=300&h=300" 
-        alt="U15 Second Place in First Division, Unafut"
-        className="w-24 h-24 object-cover mx-auto mb-4 rounded-full"
-      />
-      <h3 className="text-xl font-bold text-center mb-4">U15 Second Place in First Division, Unafut</h3>
-    </div>
-    <div className="bg-white p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition-all duration-300">
-      <img 
-        src="https://images.unsplash.com/photo-1577223625816-7546f13df25d?auto=format&fit=crop&q=80&w=300&h=300" 
-        alt="U17 National Champion Second Division, LIASCE"
-        className="w-24 h-24 object-cover mx-auto mb-4 rounded-full"
-      />
-      <h3 className="text-xl font-bold text-center mb-4">U17 National Champion Second Division, LIASCE</h3>
-    </div>
-    <div className="bg-white p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition-all duration-300">
-      <img 
-        src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&q=80&w=300&h=300" 
-        alt="U19 Super Cup National Champion, Unafut"
-        className="w-24 h-24 object-cover mx-auto mb-4 rounded-full"
-      />
-      <h3 className="text-xl font-bold text-center mb-4">U19 Super Cup National Champion, Unafut</h3>
-    </div>
-  </div>
-</div>
+        <div className="mb-16">
+          <h2 className="text-4xl font-bold text-center mb-12 relative">
+            <span className="relative z-10">
+              {language === 'en' ? 'Palmarés' : 'Palmarés'}
+              <div className="absolute -bottom-2 left-0 w-full h-3 bg-yellow-500 opacity-30"></div>
+            </span>
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {playerData.achievements.map((achievement, index) => (
+              <div
+                key={index}
+                className="bg-white p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition-all duration-300"
+              >
+                <img
+                  src="/uefa.jpg" // Replace with dynamic image if available
+                  alt={achievement.title}
+                  className="w-24 h-24 object-cover mx-auto mb-4 rounded-full"
+                />
+                <h3 className="text-xl font-bold text-center mb-4">{achievement.title}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Playing Style */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          {[
+            {
+              type: 'technical',
+              title: language === 'en' ? 'Technical Skills' : 'Habilidades Técnicas',
+              color: 'blue',
+            },
+            {
+              type: 'physical',
+              title: language === 'en' ? 'Physical Abilities' : 'Capacidades Físicas',
+              color: 'green',
+            },
+            {
+              type: 'mental',
+              title: language === 'en' ? 'Mental Strengths' : 'Fortalezas Mentales',
+              color: 'purple',
+            },
+          ].map((section, index) => (
+            <div
+              key={index}
+              className={`p-8 bg-gradient-to-br from-${section.color}-50 to-${section.color}-100 rounded-xl shadow-lg transform hover:-translate-y-2 transition-all duration-300 hover:shadow-xl`}
+            >
+              <img
+                src={`https://images.unsplash.com/photo-${section.type === 'technical' ? '1579952363872' : section.type === 'physical' ? '1571019613454' : '1543269865'}-cbf427effbad?auto=format&fit=crop&q=80&w=300&h=300`}
+                alt={section.title}
+                className={`w-16 h-16 object-cover mx-auto mb-4 rounded-full border-2 border-${section.color}-200`}
+              />
+              <h3 className={`text-xl font-semibold mb-4 text-center text-${section.color}-800`}>
+                {section.title}
+              </h3>
+              <ul className="space-y-3">
+                {playerData.strengths[section.type][language].map((skill, idx) => (
+                  <li key={idx} className="flex items-center text-gray-700">
+                    <img
+                      src={`https://images.unsplash.com/photo-${section.type === 'technical' ? '1579952363872' : section.type === 'physical' ? '1571019613454' : '1543269865'}-cbf427effbad?auto=format&fit=crop&q=80&w=50&h=50`}
+                      alt="Skill Icon"
+                      className={`w-5 h-5 object-cover rounded-full mr-2 border border-${section.color}-200`}
+                    />
+                    <span className="text-sm md:text-base">{skill}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
         {/* Playing Style */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           <div className="p-8 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl shadow-lg transform hover:-translate-y-2 transition-all duration-300">
