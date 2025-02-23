@@ -3,6 +3,7 @@ import { useLanguage } from './LanguageContext';
 import { playerData } from '../data';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { AboutMeSlider } from './AboutMeSlider';
 
 export const About: React.FC = () => {
   const { language } = useLanguage();
@@ -20,10 +21,10 @@ export const About: React.FC = () => {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'url(/est.jpg)',
+          backgroundImage: 'url(/est.jpg)', // Replace with your image path
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          filter: 'brightness(0.7)',
+          filter: 'brightness(0.7)', // Darken the background image
         }}
       >
         {/* Gradient Overlay */}
@@ -150,22 +151,21 @@ export const About: React.FC = () => {
         {/* Skills Sections */}
         <div className="space-y-16">
           {/* Technical Skills */}
-          <div className="relative overflow-hidden rounded-2xl shadow-lg" data-aos="fade-up">
+          <div className="relative overflow-hidden rounded-2xl" data-aos="fade-up">
             <div className="relative h-[400px]">
               <img 
                 src="/noaht.jpg"
                 alt="Technical Skills"
                 className="w-full h-full object-cover"
-                loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent">
-                <div className="absolute bottom-0 left-0 right-0 p-8 sm:p-12">
-                  <h3 className="text-3xl sm:text-4xl font-bold text-white mb-6 sm:mb-8 text-center">
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent">
+                <div className="absolute bottom-0 left-0 right-0 p-12">
+                  <h3 className="text-4xl font-bold text-white mb-8">
                     {language === 'en' ? 'Technical Skills' : 'Habilidades Técnicas'}
                   </h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 px-4">
+                  <div className="grid grid-cols-3 gap-6">
                     {playerData.strengths.technical[language].map((skill, index) => (
-                      <div key={index} className="bg-white/10 backdrop-blur-sm p-3 sm:p-4 rounded-lg text-white text-base sm:text-lg font-medium transform hover:scale-105 transition-transform duration-300">
+                      <div key={index} className="bg-white/10 backdrop-blur-sm p-4 rounded-lg text-white text-lg font-light transform hover:scale-105 transition-transform">
                         {skill}
                       </div>
                     ))}
@@ -176,22 +176,21 @@ export const About: React.FC = () => {
           </div>
 
           {/* Physical Abilities */}
-          <div className="relative overflow-hidden rounded-2xl shadow-lg" data-aos="fade-up">
+          <div className="relative overflow-hidden rounded-2xl" data-aos="fade-up">
             <div className="relative h-[400px]">
               <img 
                 src="/noahl.jpg"
                 alt="Physical Abilities"
                 className="w-full h-full object-cover"
-                loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent">
-                <div className="absolute bottom-0 left-0 right-0 p-8 sm:p-12">
-                  <h3 className="text-3xl sm:text-4xl font-bold text-white mb-6 sm:mb-8 text-center">
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent">
+                <div className="absolute bottom-0 left-0 right-0 p-12">
+                  <h3 className="text-4xl font-bold text-white mb-8">
                     {language === 'en' ? 'Physical Abilities' : 'Capacidades Físicas'}
                   </h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 px-4">
+                  <div className="grid grid-cols-3 gap-6">
                     {playerData.strengths.physical[language].map((skill, index) => (
-                      <div key={index} className="bg-white/10 backdrop-blur-sm p-3 sm:p-4 rounded-lg text-white text-base sm:text-lg font-medium transform hover:scale-105 transition-transform duration-300">
+                      <div key={index} className="bg-white/10 backdrop-blur-sm p-4 rounded-lg text-white text-lg font-light transform hover:scale-105 transition-transform">
                         {skill}
                       </div>
                     ))}
@@ -202,22 +201,21 @@ export const About: React.FC = () => {
           </div>
 
           {/* Mental Strengths */}
-          <div className="relative overflow-hidden rounded-2xl shadow-lg" data-aos="fade-up">
+          <div className="relative overflow-hidden rounded-2xl" data-aos="fade-up">
             <div className="relative h-[400px]">
               <img 
                 src="/noahf.jpg"
                 alt="Mental Strengths"
                 className="w-full h-full object-cover"
-                loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent">
-                <div className="absolute bottom-0 left-0 right-0 p-8 sm:p-12">
-                  <h3 className="text-3xl sm:text-4xl font-bold text-white mb-6 sm:mb-8 text-center">
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent">
+                <div className="absolute bottom-0 left-0 right-0 p-12">
+                  <h3 className="text-4xl font-bold text-white mb-8">
                     {language === 'en' ? 'Mental Strengths' : 'Fortalezas Mentales'}
                   </h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 px-4">
+                  <div className="grid grid-cols-3 gap-6">
                     {playerData.strengths.mental[language].map((skill, index) => (
-                      <div key={index} className="bg-white/10 backdrop-blur-sm p-3 sm:p-4 rounded-lg text-white text-base sm:text-lg font-medium transform hover:scale-105 transition-transform duration-300">
+                      <div key={index} className="bg-white/10 backdrop-blur-sm p-4 rounded-lg text-white text-lg font-light transform hover:scale-105 transition-transform">
                         {skill}
                       </div>
                     ))}
@@ -228,9 +226,10 @@ export const About: React.FC = () => {
           </div>
         </div>
 
-      {/* Slider Section */}
-      <div className="mt-20">
-        <AboutMeSlider />
+        {/* Slider Section */}
+        <div className="mt-20">
+          <AboutMeSlider />
+        </div>
       </div>
     </section>
   );
