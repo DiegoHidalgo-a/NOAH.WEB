@@ -147,76 +147,83 @@ export const About: React.FC = () => {
     </div>
   </div>
 </div>
-        {/* Playing Style */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          <div className="p-8 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl shadow-lg transform hover:-translate-y-2 transition-all duration-300">
-            <img 
-              src="https://images.unsplash.com/photo-1577223625816-7546f13df25d?auto=format&fit=crop&q=80&w=300&h=300" 
-              alt="Technical Skills"
-              className="w-16 h-16 object-cover mx-auto mb-4 rounded-full"
-            />
-            <h3 className="text-xl font-semibold mb-4">
-              {language === 'en' ? 'Technical Skills' : 'Habilidades Técnicas'}
-            </h3>
-            <ul className="space-y-3">
-              {playerData.strengths.technical[language].map((skill, index) => (
-                <li key={index} className="flex items-center text-gray-700">
-                  <img 
-                    src="https://images.unsplash.com/photo-1577223625816-7546f13df25d?auto=format&fit=crop&q=80&w=50&h=50" 
-                    alt="Skill Icon"
-                    className="w-5 h-5 object-cover rounded-full mr-2"
-                  />
-                  {skill}
-                </li>
-              ))}
-            </ul>
+         {/* Skills Sections */}
+         <div className="space-y-16">
+          {/* Technical Skills */}
+          <div className="relative overflow-hidden rounded-2xl" data-aos="fade-up">
+            <div className="relative h-[400px]">
+              <img 
+                src="/noaht.jpg"
+                alt="Technical Skills"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent">
+                <div className="absolute bottom-0 left-0 right-0 p-12">
+                  <h3 className="text-4xl font-bold text-white mb-8">
+                    {language === 'en' ? 'Technical Skills' : 'Habilidades Técnicas'}
+                  </h3>
+                  <div className="grid grid-cols-3 gap-6">
+                    {playerData.strengths.technical[language].map((skill, index) => (
+                      <div key={index} className="bg-white/10 backdrop-blur-sm p-4 rounded-lg text-white text-lg font-light transform hover:scale-105 transition-transform">
+                        {skill}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="p-8 bg-gradient-to-br from-green-50 to-green-100 rounded-xl shadow-lg transform hover:-translate-y-2 transition-all duration-300">
-            <img 
-              src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&q=80&w=300&h=300" 
-              alt="Physical Abilities"
-              className="w-16 h-16 object-cover mx-auto mb-4 rounded-full"
-            />
-            <h3 className="text-xl font-semibold mb-4">
-              {language === 'en' ? 'Physical Abilities' : 'Capacidades Físicas'}
-            </h3>
-            <ul className="space-y-3">
-              {playerData.strengths.physical[language].map((skill, index) => (
-                <li key={index} className="flex items-center text-gray-700">
-                  <img 
-                    src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&q=80&w=50&h=50" 
-                    alt="Skill Icon"
-                    className="w-5 h-5 object-cover rounded-full mr-2"
-                  />
-                  {skill}
-                </li>
-              ))}
-            </ul>
+
+          {/* Physical Abilities */}
+          <div className="relative overflow-hidden rounded-2xl" data-aos="fade-up">
+            <div className="relative h-[400px]">
+              <img 
+                src="/noahl.jpg"
+                alt="Physical Abilities"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent">
+                <div className="absolute bottom-0 left-0 right-0 p-12">
+                  <h3 className="text-4xl font-bold text-white mb-8">
+                    {language === 'en' ? 'Physical Abilities' : 'Capacidades Físicas'}
+                  </h3>
+                  <div className="grid grid-cols-3 gap-6">
+                    {playerData.strengths.physical[language].map((skill, index) => (
+                      <div key={index} className="bg-white/10 backdrop-blur-sm p-4 rounded-lg text-white text-lg font-light transform hover:scale-105 transition-transform">
+                        {skill}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="p-8 bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl shadow-lg transform hover:-translate-y-2 transition-all duration-300">
-            <img 
-              src="https://images.unsplash.com/photo-1546483875-ad9014c88eba?auto=format&fit=crop&q=80&w=300&h=300" 
-              alt="Mental Strengths"
-              className="w-16 h-16 object-cover mx-auto mb-4 rounded-full"
-            />
-            <h3 className="text-xl font-semibold mb-4">
-              {language === 'en' ? 'Mental Strengths' : 'Fortalezas Mentales'}
-            </h3>
-            <ul className="space-y-3">
-              {playerData.strengths.mental[language].map((skill, index) => (
-                <li key={index} className="flex items-center text-gray-700">
-                  <img 
-                    src="https://images.unsplash.com/photo-1546483875-ad9014c88eba?auto=format&fit=crop&q=80&w=50&h=50" 
-                    alt="Skill Icon"
-                    className="w-5 h-5 object-cover rounded-full mr-2"
-                  />
-                  {skill}
-                </li>
-              ))}
-            </ul>
+
+          {/* Mental Strengths */}
+          <div className="relative overflow-hidden rounded-2xl" data-aos="fade-up">
+            <div className="relative h-[400px]">
+              <img 
+                src="/noahf.jpg"
+                alt="Mental Strengths"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent">
+                <div className="absolute bottom-0 left-0 right-0 p-12">
+                  <h3 className="text-4xl font-bold text-white mb-8">
+                    {language === 'en' ? 'Mental Strengths' : 'Fortalezas Mentales'}
+                  </h3>
+                  <div className="grid grid-cols-3 gap-6">
+                    {playerData.strengths.mental[language].map((skill, index) => (
+                      <div key={index} className="bg-white/10 backdrop-blur-sm p-4 rounded-lg text-white text-lg font-light transform hover:scale-105 transition-transform">
+                        {skill}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
 
       {/* Slider Section */}
       <div className="mt-20">
