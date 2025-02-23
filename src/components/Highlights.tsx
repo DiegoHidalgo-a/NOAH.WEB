@@ -70,7 +70,7 @@ export const Highlights: React.FC = () => {
         <div className="mb-16">
           <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl">
             <iframe
-              src="https://www.youtube.com/embed/x_BfF-lTeZM?si=vr-cx--JsFymLUe4" // YouTube embed URL
+              src="/Noah.mp4" // YouTube embed URL
               className="w-full h-full object-cover"
               title="Featured highlight"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
