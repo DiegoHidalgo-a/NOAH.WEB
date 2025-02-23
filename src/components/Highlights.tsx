@@ -17,7 +17,7 @@ export const Highlights: React.FC = () => {
   const highlights = [
     {
       title: { en: 'Full Games', es: 'Partido Completo' },
-      video: '/Noah.mp4', // Local video file
+      video: '/https://www.youtube.com/live/0kt7w6TEjp8', // Local video file
       thumbnail: '/noah4.webp', // Local thumbnail
       duration: '3:45',
     },
