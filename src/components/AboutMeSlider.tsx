@@ -9,8 +9,8 @@ export const AboutMeSlider: React.FC = () => {
   const [activeSlide, setActiveSlide] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [direction, setDirection] = useState<'left' | 'right'>('right');
-  const [showText, setShowText] = useState(false);
-  const [showTitle, setShowTitle] = useState(false);
+  const [showText, setShowText] = useState(false); // Controls text visibility
+  const [showTitle, setShowTitle] = useState(false); // Controls title visibility
 
   useEffect(() => {
     AOS.init({
@@ -28,7 +28,7 @@ export const AboutMeSlider: React.FC = () => {
         en: "Currently playing in the minor leagues of first division Costa Rica soccer (UNAFUT) with Club Sport Herediano, the actual champion of Costa Rica.",
         es: "Actualmente jugandi en las ligas menores del fútbol de primera división de Costa Rica (UNAFUT) con el Club Sport Herediano, el actual campeon de Costa Rica"
       },
-      image: "/h3.jpg"
+      image: "/h3.jpg" // Replace with the correct image path
     },
     {
       title: "UNIVERSIDAD DE COSTA RICA",
@@ -36,7 +36,7 @@ export const AboutMeSlider: React.FC = () => {
         en: "Played in the minor leagues of first division team at that time, Universidad de Costa Rica.",
         es: "Jugué en las ligas menores del equipo de primera división en ese momento, Universidad de Costa Rica."
       },
-      image: "/ucr.jpg"
+      image: "/ucr.jpg" // Replace with the correct image path
     },
     {
       title: "YOUNG TALENT",
@@ -44,7 +44,7 @@ export const AboutMeSlider: React.FC = () => {
         en: "Played in older teams at a young age (U15 and U20 at 13/14 years old).",
         es: "Jugué en equipos mayores a una edad temprana (U15 y U20 a los 13/14 años)."
       },
-      image: "/7.jpg"
+      image: "/7.jpg" // Replace with the correct image path
     },
     {
       title: "NATIONAL TEAM U15",
@@ -52,7 +52,7 @@ export const AboutMeSlider: React.FC = () => {
         en: "Trained with the national team U15 in 2020.",
         es: "Entrené con la selección nacional U15 en 2020."
       },
-      image: "/cr.jpg"
+      image: "/cr.jpg" // Replace with the correct image path
     },
     {
       title: "INTERNATIONAL TOURNAMENTS",
@@ -60,15 +60,15 @@ export const AboutMeSlider: React.FC = () => {
         en: "Participated in international tournaments: GPS tournament in Puerto Rico 2017, Copa Patrick in Panama 2018, and Ibercup Brasil 2019.",
         es: "Participé en torneos internacionales: Torneo GPS en Puerto Rico 2017, Copa Patrick en Panamá 2018 e Ibercup Brasil 2019."
       },
-      image: "/3.jpg"
-    },
+      image: "/3.jpg" // Replace with the correct image path
+      },
     {
       title: "GPS tournament in Puerto Rico 2017",
       description: {
         en: "Played in a professional tournament in Puerto Rico.",
         es: "Jugué en un torneo profesional en Puerto Rico."
       },
-      image: "/6.jpg"
+      image: "/6.jpg" // Replace with the correct image path
     },
     {
       title: "PRE-SEASON PREPARATION",
@@ -76,7 +76,7 @@ export const AboutMeSlider: React.FC = () => {
         en: "Pre-season preparation with U20 Universidad de Costa Rica in Guatemala.",
         es: "Preparación de pretemporada con la U20 de la Universidad de Costa Rica en Guatemala."
       },
-      image: "/5.jpg"
+      image: "/5.jpg" // Replace with the correct image path
     },
     {
       title: "COMBINE ACADEMY",
@@ -84,7 +84,7 @@ export const AboutMeSlider: React.FC = () => {
         en: "Played for a year in Combine Academy soccer in North Carolina, United States. Played UPSL tournament, Premier division.",
         es: "Jugó durante un año en Combine Academy soccer en Carolina del Norte, Estados Unidos. Jugó el torneo UPSL, división Premier."
       },
-      image: "/8.jpg"
+      image: "/8.jpg" // Replace with the correct image path
     }
   ];
 
@@ -99,15 +99,15 @@ export const AboutMeSlider: React.FC = () => {
     if (isTransitioning) return;
     setDirection('right');
     setIsTransitioning(true);
-    setShowText(false);
-    setShowTitle(false);
+    setShowText(false); // Hide text during transition
+    setShowTitle(false); // Hide title during transition
 
     setTimeout(() => {
       setActiveSlide((prev) => (prev + 1) % portfolioItems.length);
       setIsTransitioning(false);
       setTimeout(() => {
-        setShowText(true);
-        setTimeout(() => setShowTitle(true), 500);
+        setShowText(true); // Show text after slide transition
+        setTimeout(() => setShowTitle(true), 500); // Show title after text appears
       }, 500);
     }, 500);
   };
@@ -116,15 +116,15 @@ export const AboutMeSlider: React.FC = () => {
     if (isTransitioning) return;
     setDirection('left');
     setIsTransitioning(true);
-    setShowText(false);
-    setShowTitle(false);
+    setShowText(false); // Hide text during transition
+    setShowTitle(false); // Hide title during transition
 
     setTimeout(() => {
       setActiveSlide((prev) => (prev - 1 + portfolioItems.length) % portfolioItems.length);
       setIsTransitioning(false);
       setTimeout(() => {
-        setShowText(true);
-        setTimeout(() => setShowTitle(true), 500);
+        setShowText(true); // Show text after slide transition
+        setTimeout(() => setShowTitle(true), 500); // Show title after text appears
       }, 500);
     }, 500);
   };
@@ -158,45 +158,45 @@ export const AboutMeSlider: React.FC = () => {
           }`}
         >
           <h2 
-            className={`text-4xl md:text-6xl lg:text-8xl font-bold text-white mb-4 md:mb-8 tracking-wider transition-all duration-1000 ${
+            className={`text-6xl md:text-8xl font-bold text-white mb-8 tracking-wider transition-all duration-1000 ${
               showTitle ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'
             }`}
           >
             {portfolioItems[activeSlide].title}
           </h2>
-          <p className="text-lg md:text-xl lg:text-2xl text-gray-200 leading-relaxed max-w-2xl mx-auto font-light">
+          <p className="text-xl md:text-2xl text-gray-200 leading-relaxed max-w-2xl mx-auto font-light">
             {portfolioItems[activeSlide].description[language]}
           </p>
         </div>
       </div>
 
       {/* Navigation Controls */}
-      <div className="absolute bottom-8 md:bottom-12 left-0 right-0 z-20 flex justify-center items-center gap-4 md:gap-8">
+      <div className="absolute bottom-12 left-0 right-0 z-20 flex justify-center items-center gap-8">
         <button
           onClick={handlePrev}
-          className="p-2 md:p-3 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 group"
+          className="p-3 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 group"
           aria-label="Previous slide"
         >
-          <ChevronLeft className="w-6 h-6 md:w-8 md:h-8 text-white transform group-hover:-translate-x-1 transition-transform" />
+          <ChevronLeft className="w-8 h-8 text-white transform group-hover:-translate-x-1 transition-transform" />
         </button>
         
-        <div className="flex gap-2 md:gap-4">
+        <div className="flex gap-4">
           {portfolioItems.map((_, index) => (
             <button
               key={index}
               onClick={() => {
                 setActiveSlide(index);
-                setShowText(false);
-                setShowTitle(false);
+                setShowText(false); // Hide text during manual slide change
+                setShowTitle(false); // Hide title during manual slide change
                 setTimeout(() => {
-                  setShowText(true);
-                  setTimeout(() => setShowTitle(true), 500);
+                  setShowText(true); // Show text after slide transition
+                  setTimeout(() => setShowTitle(true), 500); // Show title after text appears
                 }, 500);
               }}
               className={`transition-all duration-500 ${
                 index === activeSlide
-                  ? 'w-8 md:w-12 h-1 bg-white'
-                  : 'w-4 md:w-6 h-1 bg-white/50 hover:bg-white/75'
+                  ? 'w-12 h-1 bg-white'
+                  : 'w-6 h-1 bg-white/50 hover:bg-white/75'
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />
@@ -205,10 +205,10 @@ export const AboutMeSlider: React.FC = () => {
 
         <button
           onClick={handleNext}
-          className="p-2 md:p-3 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 group"
+          className="p-3 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 group"
           aria-label="Next slide"
         >
-          <ChevronRight className="w-6 h-6 md:w-8 md:h-8 text-white transform group-hover:translate-x-1 transition-transform" />
+          <ChevronRight className="w-8 h-8 text-white transform group-hover:translate-x-1 transition-transform" />
         </button>
       </div>
 
