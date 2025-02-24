@@ -23,16 +23,9 @@ interface TeamPageProps {
       en: string[];
       es: string[];
     };
-    stats: {
-      en: string[];
-      es: string[];
-    };
-    highlights: {
-      en: string[];
-      es: string[];
-    };
+    // Removed stats and highlights from the interface
   };
-  backgroundImage?: string; // Optional background image
+  backgroundImage?: string;
 }
 
 export const TeamPage: React.FC<TeamPageProps> = ({ team, backgroundImage }) => {
@@ -103,40 +96,6 @@ export const TeamPage: React.FC<TeamPageProps> = ({ team, backgroundImage }) => 
                 <li key={index} className="text-lg text-gray-700">
                   <span className="text-blue-500 mr-2">•</span>
                   {achievement}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        {/* Stats */}
-        {team.stats[language].length > 0 && (
-          <div className="bg-white/90 rounded-lg shadow-2xl p-8 mb-16" data-aos="fade-up">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              {language === 'en' ? 'Statistics' : 'Estadísticas'}
-            </h2>
-            <ul className="space-y-4">
-              {team.stats[language].map((stat, index) => (
-                <li key={index} className="text-lg text-gray-700">
-                  <span className="text-blue-500 mr-2">•</span>
-                  {stat}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        {/* Highlights */}
-        {team.highlights[language].length > 0 && (
-          <div className="bg-white/90 rounded-lg shadow-2xl p-8 mb-16" data-aos="fade-up">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              {language === 'en' ? 'Highlights' : 'Destacados'}
-            </h2>
-            <ul className="space-y-4">
-              {team.highlights[language].map((highlight, index) => (
-                <li key={index} className="text-lg text-gray-700">
-                  <span className="text-blue-500 mr-2">•</span>
-                  {highlight}
                 </li>
               ))}
             </ul>
