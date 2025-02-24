@@ -14,11 +14,17 @@ export const About: React.FC = () => {
       once: true,
       mirror: false,
       easing: 'ease-out-cubic',
+      offset: 80, // Added to fix vertical alignment
+      startEvent: 'load', // Ensures animations trigger correctly
     });
   }, []);
 
   return (
-    <section id="about" className="relative py-12 md:py-20 overflow-hidden">
+    <section 
+      id="about" 
+      className="relative pt-12 md:pt-16 pb-12 md:pb-20 overflow-hidden" 
+      style={{ scrollMarginTop: '80px' }} // Added to prevent anchor link jumps
+    >
       {/* Background Image with Animated Gradient */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -33,10 +39,10 @@ export const About: React.FC = () => {
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white bg-opacity-80 rounded-lg shadow-lg p-4 md:p-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white bg-opacity-80 rounded-lg shadow-lg p-4 md:p-6">
         
         {/* Title Section with Enhanced Underline Animation */}
-        <div className="mb-8 md:mb-16" data-aos="fade-up">
+        <div className="mb-6 md:mb-12" data-aos="fade-up">
           <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-2 md:mb-4 relative inline-block">
             <span className="relative z-10">
               {language === 'en' ? 'About Me' : 'Sobre Mí'}
