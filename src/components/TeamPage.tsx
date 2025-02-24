@@ -23,7 +23,6 @@ interface TeamPageProps {
       en: string[];
       es: string[];
     };
-    // Removed stats and highlights from the interface
   };
   backgroundImage?: string;
 }
@@ -33,68 +32,80 @@ export const TeamPage: React.FC<TeamPageProps> = ({ team, backgroundImage }) => 
 
   useEffect(() => {
     AOS.init({
-      duration: 1000,
+      duration: 1200,
       once: true,
-      mirror: true,
-      easing: 'ease-in-out',
+      mirror: false,
+      easing: 'ease-out-quart',
     });
   }, []);
 
   return (
     <section className="relative min-h-screen overflow-hidden bg-black">
-      {/* Background Image with Parallax Effect */}
+      {/* Enhanced Background with Parallax */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
         style={{
-          backgroundImage: `url(${backgroundImage || 'https://images.unsplash.com/photo-1552667466-07770ae110d0?auto=format&fit=crop&q=80&w=2070'})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          filter: 'brightness(0.5)',
+          backgroundImage: `url(${backgroundImage || '/3.jpg'})`,
+          filter: 'brightness(0.7) saturate(1.2)',
+          transform: 'translateZ(0)', // Enable hardware acceleration
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+        <div className="absolute inset-0 bg-noise opacity-10" /> {/* Add texture */}
       </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        {/* Back Button */}
+        {/* Back Button with Hover Animation */}
         <a
           href="/career"
-          className="inline-flex items-center text-gray-300 hover:text-blue-500 mb-8 group"
+          className="inline-flex items-center text-gray-200 hover:text-white mb-12 group transition-colors duration-300"
           data-aos="fade-up"
         >
-          <ArrowLeft className="w-5 h-5 mr-2 transform group-hover:-translate-x-1 transition-transform" />
-          <span>{language === 'en' ? 'Back to Career' : 'Volver a Carrera'}</span>
+          <ArrowLeft className="w-6 h-6 mr-2 transform group-hover:-translate-x-2 transition-transform duration-300" />
+          <span className="text-lg font-medium">
+            {language === 'en' ? 'Back to Career' : 'Volver a Carrera'}
+          </span>
         </a>
 
-        {/* Header */}
-        <div className="text-center mb-16" data-aos="fade-up">
-          <h1 className="text-6xl md:text-8xl font-bold text-white mb-4">
+        {/* Header with Gradient Text */}
+        <div className="text-center mb-20" data-aos="fade-up" data-aos-delay="100">
+          <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent mb-6 tracking-tight">
             {team.name}
           </h1>
-          <p className="text-2xl text-blue-500">
+          <p className="text-xl text-cyan-200 font-light">
             {team.period}
           </p>
         </div>
 
-        {/* Description */}
-        <div className="bg-white/90 rounded-lg shadow-2xl p-8 mb-16" data-aos="fade-up">
-          <p className="text-xl text-gray-800 leading-relaxed">
+        {/* Description Card with Glass Morphism */}
+        <div 
+          className="backdrop-blur-lg bg-white/5 rounded-2xl shadow-2xl p-8 mb-20 border border-white/10 hover:border-white/20 transition-all duration-500"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <p className="text-xl text-cyan-50 leading-relaxed font-light">
             {team.description[language]}
           </p>
         </div>
 
-        {/* Achievements */}
+        {/* Achievements with Icon Animation */}
         {team.achievements[language].length > 0 && (
-          <div className="bg-white/90 rounded-lg shadow-2xl p-8 mb-16" data-aos="fade-up">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+          <div 
+            className="backdrop-blur-lg bg-white/5 rounded-2xl shadow-2xl p-8 mb-20 border border-white/10 hover:border-white/20 transition-all duration-500"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <h2 className="text-3xl font-semibold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent mb-8">
               {language === 'en' ? 'Achievements' : 'Logros'}
             </h2>
-            <ul className="space-y-4">
+            <ul className="space-y-5">
               {team.achievements[language].map((achievement, index) => (
-                <li key={index} className="text-lg text-gray-700">
-                  <span className="text-blue-500 mr-2">•</span>
+                <li 
+                  key={index} 
+                  className="flex items-center text-lg text-cyan-50 group"
+                >
+                  <span className="w-3 h-3 bg-cyan-400 rounded-full mr-4 transform group-hover:scale-125 transition-transform" />
                   {achievement}
                 </li>
               ))}
@@ -102,25 +113,29 @@ export const TeamPage: React.FC<TeamPageProps> = ({ team, backgroundImage }) => 
           </div>
         )}
 
-        {/* Gallery */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Enhanced Gallery Grid */}
+        <div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
           {team.gallery.map((item, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-lg shadow-lg"
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
+              className="group relative overflow-hidden rounded-2xl shadow-2xl transform hover:-translate-y-2 transition-all duration-500"
             >
-              <div className="aspect-w-16 aspect-h-9">
+              <div className="aspect-w-16 aspect-h-10">
                 <img
                   src={item.image}
                   alt={item.caption[language]}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-0 left-0 right-0 p-4">
-                  <p className="text-white text-sm">{item.caption[language]}</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <p className="text-cyan-100 text-lg font-light opacity-0 transform translate-y-4 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                    {item.caption[language]}
+                  </p>
                 </div>
               </div>
             </div>
