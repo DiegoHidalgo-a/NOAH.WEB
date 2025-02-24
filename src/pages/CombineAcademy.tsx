@@ -47,35 +47,7 @@ const teamData = {
       "Reconocido por liderazgo y trabajo en equipo"
     ]
   },
-  stats: {
-    en: [
-      "Matches Played: 10",
-      "Clean Sheets: 6",
-      "Tackles per Game: 4.8",
-      "Interceptions per Game: 3.5",
-      "Pass Accuracy: 90%"
-    ],
-    es: [
-      "Partidos Jugados: 10",
-      "Porterías Imbatidas: 6",
-      "Entradas por Partido: 4.8",
-      "Intercepciones por Partido: 3.5",
-      "Precisión de Pases: 90%"
-    ]
-  },
-  highlights: {
-    en: [
-      "Named Man of the Match in 3 games",
-      "Helped the team reach the playoffs in the UPSL tournament",
-      "Recognized for consistent performance and discipline"
-    ],
-    es: [
-      "Elegido Jugador del Partido en 3 encuentros",
-      "Ayudó al equipo a llegar a los playoffs del torneo UPSL",
-      "Reconocido por rendimiento consistente y disciplina"
-    ]
-  }
-};
+
 
 export const CombineAcademy = () => {
   return (
