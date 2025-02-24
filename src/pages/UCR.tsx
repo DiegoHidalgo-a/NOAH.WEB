@@ -1,5 +1,7 @@
 import React from 'react';
 import { TeamPage } from '../components/TeamPage';
+import { ArrowLeft } from 'lucide-react';
+import { useLanguage } from './LanguageContext';
 
 const teamData = {
   name: "Universidad de Costa Rica",
@@ -78,10 +80,28 @@ const teamData = {
 };
 
 export const UCR = () => {
+  const { language } = useLanguage();
+
   return (
-    <TeamPage
-      team={teamData}
-      backgroundImage="/est2.jpg" // Replace with your image path
-    />
+    <div className="relative">
+      {/* Back Button with Enhanced Styling */}
+      <a
+        href="/career"
+        className="group fixed top-6 left-6 z-50 inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full p-3 pr-6 border border-white/20 hover:border-cyan-300/40 transition-all duration-500 hover:bg-white/20"
+      >
+        <div className="p-2 bg-white/10 rounded-full transition-all duration-300 group-hover:bg-cyan-300/20">
+          <ArrowLeft className="w-6 h-6 text-cyan-300 group-hover:text-cyan-400 transition-all duration-300 transform group-hover:-translate-x-1" />
+        </div>
+        <span className="text-lg font-medium bg-gradient-to-r from-cyan-300 to-blue-400 bg-clip-text text-transparent group-hover:bg-gradient-to-l transition-all duration-500">
+          {language === 'en' ? 'Back to Career' : 'Volver a Carrera'}
+        </span>
+      </a>
+
+      {/* TeamPage Component */}
+      <TeamPage
+        team={teamData}
+        backgroundImage="/est2.jpg"
+      />
+    </div>
   );
 };
