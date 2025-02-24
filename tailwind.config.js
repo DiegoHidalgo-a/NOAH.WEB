@@ -1,17 +1,8 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    extend: {
-      backgroundSize: {
-        '200': '200% auto',
-      },
-      backgroundPosition: {
-        'pos-100': '100% center',
-      }
-    },
+    extend: {},
   },
-  plugins: [
-    require('tailwindcss-animated')
-  ],
+  plugins: [],
 };
