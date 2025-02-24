@@ -14,16 +14,16 @@ export const About: React.FC = () => {
       once: true,
       mirror: false,
       easing: 'ease-out-cubic',
-      offset: 80, // Added to fix vertical alignment
-      startEvent: 'load', // Ensures animations trigger correctly
+      offset: window.innerWidth < 768 ? 120 : 200, // Adjusted for mobile
+      startEvent: 'DOMContentLoaded', // Ensure animations trigger early
     });
   }, []);
 
   return (
     <section 
       id="about" 
-      className="relative pt-12 md:pt-16 pb-12 md:pb-20 overflow-hidden" 
-      style={{ scrollMarginTop: '80px' }} // Added to prevent anchor link jumps
+      className="relative min-h-screen pt-12 md:pt-16 pb-12 md:pb-20 overflow-hidden"
+      style={{ scrollMarginTop: '80px' }} // Prevent anchor link jumps
     >
       {/* Background Image with Animated Gradient */}
       <div
@@ -194,7 +194,7 @@ export const About: React.FC = () => {
         </div>
       </div>
 
-      {/* Slider Section with Enhanced Entrance */}
+      {/* Full-width Slider Section */}
       <div className="w-full mt-8 md:mt-20" data-aos="fade-up" data-aos-delay="300">
         <AboutMeSlider />
       </div>
