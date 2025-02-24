@@ -14,7 +14,7 @@ export const About: React.FC = () => {
       once: true,
       mirror: false,
       easing: 'ease-out-cubic',
-      offset: window.innerWidth < 768 ? 120 : 200, // Adjusted for mobile
+      offset: window.innerWidth < 768 ? 80 : 200, // Reduced for mobile
       startEvent: 'DOMContentLoaded', // Ensure animations trigger early
     });
   }, []);
@@ -22,8 +22,8 @@ export const About: React.FC = () => {
   return (
     <section 
       id="about" 
-      className="relative min-h-screen pt-12 md:pt-16 pb-12 md:pb-20 overflow-hidden"
-      style={{ scrollMarginTop: '80px' }} // Prevent anchor link jumps
+      className="relative min-h-screen pt-10 md:pt-16 pb-12 md:pb-20 overflow-hidden"
+      style={{ scrollMarginTop: '60px' }} // Adjusted for mobile
     >
       {/* Background Image with Animated Gradient */}
       <div
