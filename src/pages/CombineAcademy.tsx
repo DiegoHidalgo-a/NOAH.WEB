@@ -46,8 +46,8 @@ const teamData = {
       "Contribuyente clave al éxito del equipo en el torneo UPSL",
       "Reconocido por liderazgo y trabajo en equipo"
     ]
-  },
-
+  }
+};
 
 export const CombineAcademy = () => {
   return (
