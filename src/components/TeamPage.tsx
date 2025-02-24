@@ -47,47 +47,25 @@ export const TeamPage: React.FC<TeamPageProps> = ({ team, backgroundImage }) => 
         style={{
           backgroundImage: `url(${backgroundImage || '/3.jpg'})`,
           filter: 'brightness(0.7) saturate(1.2)',
-          transform: 'translateZ(0)',
+          transform: 'translateZ(0)', // Enable hardware acceleration
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
-        <div className="absolute inset-0 bg-noise opacity-10" />
+        <div className="absolute inset-0 bg-noise opacity-10" /> {/* Add texture */}
       </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        {/* Enhanced Back Button */}
+        {/* Back Button with Hover Animation */}
         <a
           href="/career"
-          className="group relative inline-flex items-center mb-16 overflow-visible transition-all duration-500"
+          className="inline-flex items-center text-gray-200 hover:text-white mb-12 group transition-colors duration-300"
           data-aos="fade-up"
         >
-          {/* Glowing background effect */}
-          <div className="absolute -inset-2 rounded-full bg-gradient-to-r from-cyan-400/20 to-blue-500/20 opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-300" />
-          
-          {/* Animated border gradient */}
-          <div className="absolute -inset-0.5 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 opacity-0 group-hover:opacity-30 transition-opacity duration-500" />
-
-          {/* Main button content */}
-          <div className="relative flex items-center backdrop-blur-lg bg-white/5 px-8 py-4 rounded-full border border-white/20 group-hover:border-cyan-300/40 transition-all duration-500 hover:bg-white/2">
-            <ArrowLeft 
-              className="w-7 h-7 mr-3 text-cyan-300 group-hover:text-cyan-400 transition-all duration-300 transform group-hover:-translate-x-1.5 group-hover:scale-110" 
-            />
-            <span className="text-xl font-semibold bg-gradient-to-r from-cyan-300 via-blue-400 to-cyan-300 bg-clip-text text-transparent bg-size-200 group-hover:bg-pos-100 transition-all duration-500">
-              {language === 'en' ? 'Back to Career' : 'Volver a Carrera'}
-            </span>
-          </div>
-
-          {/* Animated trailing particles */}
-          <div className="absolute -right-6 opacity-0 group-hover:opacity-100 group-hover:right-2 transition-all duration-500 flex space-x-1">
-            {[...Array(3)].map((_, i) => (
-              <div 
-                key={i}
-                className="w-1.5 h-1.5 bg-cyan-400 rounded-full animate-pulse"
-                style={{ animationDelay: `${i * 100}ms` }}
-              />
-            ))}
-          </div>
+          <ArrowLeft className="w-6 h-6 mr-2 transform group-hover:-translate-x-2 transition-transform duration-300" />
+          <span className="text-lg font-medium">
+            {language === 'en' ? 'Back to Career' : 'Volver a Carrera'}
+          </span>
         </a>
 
         {/* Header with Gradient Text */}
