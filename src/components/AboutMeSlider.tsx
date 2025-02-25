@@ -158,13 +158,13 @@ export const AboutMeSlider: React.FC = () => {
           }`}
         >
           <h2 
-            className={`text-6xl md:text-8xl font-bold text-white mb-8 tracking-wider transition-all duration-1000 ${
+            className={`text-4xl sm:text-6xl md:text-8xl font-bold text-white mb-4 sm:mb-8 tracking-wider transition-all duration-1000 ${
               showTitle ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'
             }`}
           >
             {portfolioItems[activeSlide].title}
           </h2>
-          <p className="text-xl md:text-2xl text-gray-200 leading-relaxed max-w-2xl mx-auto font-light">
+          <p className="text-base sm:text-xl md:text-2xl text-gray-200 leading-relaxed max-w-2xl mx-auto font-light">
             {portfolioItems[activeSlide].description[language]}
           </p>
         </div>
@@ -177,7 +177,7 @@ export const AboutMeSlider: React.FC = () => {
           className="p-3 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 group"
           aria-label="Previous slide"
         >
-          <ChevronLeft className="w-8 h-8 text-white transform group-hover:-translate-x-1 transition-transform" />
+          <ChevronLeft className="w-6 h-6 sm:w-8 sm:h-8 text-white transform group-hover:-translate-x-1 transition-transform" />
         </button>
         
         <div className="flex gap-4">
@@ -195,8 +195,8 @@ export const AboutMeSlider: React.FC = () => {
               }}
               className={`transition-all duration-500 ${
                 index === activeSlide
-                  ? 'w-12 h-1 bg-white'
-                  : 'w-6 h-1 bg-white/50 hover:bg-white/75'
+                  ? 'w-8 sm:w-12 h-1 bg-white'
+                  : 'w-4 sm:w-6 h-1 bg-white/50 hover:bg-white/75'
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />
@@ -208,7 +208,7 @@ export const AboutMeSlider: React.FC = () => {
           className="p-3 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 group"
           aria-label="Next slide"
         >
-          <ChevronRight className="w-8 h-8 text-white transform group-hover:translate-x-1 transition-transform" />
+          <ChevronRight className="w-6 h-6 sm:w-8 sm:h-8 text-white transform group-hover:translate-x-1 transition-transform" />
         </button>
       </div>
 
