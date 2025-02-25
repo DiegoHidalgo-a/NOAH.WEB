@@ -1,4 +1,4 @@
-act, { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useLanguage } from './LanguageContext';
 import { playerData } from '../data';
 import AOS from 'aos';
