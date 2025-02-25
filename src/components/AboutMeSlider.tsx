@@ -158,29 +158,29 @@ export const AboutMeSlider: React.FC = () => {
           }`}
         >
           <h2 
-            className={`text-4xl sm:text-6xl md:text-8xl font-bold text-white mb-4 sm:mb-8 tracking-wider transition-all duration-1000 ${
+            className={`text-5xl md:text-8xl font-bold text-white mb-4 md:mb-8 tracking-wider transition-all duration-1000 ${
               showTitle ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'
             }`}
           >
             {portfolioItems[activeSlide].title}
           </h2>
-          <p className="text-base sm:text-xl md:text-2xl text-gray-200 leading-relaxed max-w-2xl mx-auto font-light">
+          <p className="text-lg md:text-2xl text-gray-200 leading-relaxed max-w-2xl mx-auto font-light">
             {portfolioItems[activeSlide].description[language]}
           </p>
         </div>
       </div>
 
       {/* Navigation Controls */}
-      <div className="absolute bottom-12 left-0 right-0 z-20 flex justify-center items-center gap-8">
+      <div className="absolute bottom-12 left-0 right-0 z-20 flex justify-center items-center gap-4 sm:gap-8">
         <button
           onClick={handlePrev}
-          className="p-3 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 group"
+          className="p-2 sm:p-3 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 group"
           aria-label="Previous slide"
         >
           <ChevronLeft className="w-6 h-6 sm:w-8 sm:h-8 text-white transform group-hover:-translate-x-1 transition-transform" />
         </button>
         
-        <div className="flex gap-4">
+        <div className="flex gap-2 sm:gap-4">
           {portfolioItems.map((_, index) => (
             <button
               key={index}
@@ -205,7 +205,7 @@ export const AboutMeSlider: React.FC = () => {
 
         <button
           onClick={handleNext}
-          className="p-3 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 group"
+          className="p-2 sm:p-3 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 group"
           aria-label="Next slide"
         >
           <ChevronRight className="w-6 h-6 sm:w-8 sm:h-8 text-white transform group-hover:translate-x-1 transition-transform" />
