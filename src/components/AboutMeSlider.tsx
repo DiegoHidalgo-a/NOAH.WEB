@@ -23,69 +23,69 @@ export const AboutMeSlider: React.FC = () => {
 
   const portfolioItems = [
     {
-      title: "CLUB SPORT HEREDIANO",
+      title: 'CLUB SPORT HEREDIANO',
       description: {
-        en: "Currently playing in the minor leagues of first division Costa Rica soccer (UNAFUT) with Club Sport Herediano, the actual champion of Costa Rica.",
-        es: "Actualmente jugandi en las ligas menores del fútbol de primera división de Costa Rica (UNAFUT) con el Club Sport Herediano, el actual campeon de Costa Rica"
+        en: 'Currently playing in the minor leagues of first division Costa Rica soccer (UNAFUT) with Club Sport Herediano, the actual champion of Costa Rica.',
+        es: 'Actualmente jugandi en las ligas menores del fútbol de primera división de Costa Rica (UNAFUT) con el Club Sport Herediano, el actual campeon de Costa Rica',
       },
-      image: "/h3.jpg" // Replace with the correct image path
+      image: '/h3.jpg', // Replace with the correct image path
     },
     {
-      title: "UNIVERSIDAD DE COSTA RICA",
+      title: 'UNIVERSIDAD DE COSTA RICA',
       description: {
-        en: "Played in the minor leagues of first division team at that time, Universidad de Costa Rica.",
-        es: "Jugué en las ligas menores del equipo de primera división en ese momento, Universidad de Costa Rica."
+        en: 'Played in the minor leagues of first division team at that time, Universidad de Costa Rica.',
+        es: 'Jugué en las ligas menores del equipo de primera división en ese momento, Universidad de Costa Rica.',
       },
-      image: "/ucr.jpg" // Replace with the correct image path
+      image: '/ucr.jpg', // Replace with the correct image path
     },
     {
-      title: "YOUNG TALENT",
+      title: 'YOUNG TALENT',
       description: {
-        en: "Played in older teams at a young age (U15 and U20 at 13/14 years old).",
-        es: "Jugué en equipos mayores a una edad temprana (U15 y U20 a los 13/14 años)."
+        en: 'Played in older teams at a young age (U15 and U20 at 13/14 years old).',
+        es: 'Jugué en equipos mayores a una edad temprana (U15 y U20 a los 13/14 años).',
       },
-      image: "/7.jpg" // Replace with the correct image path
+      image: '/7.jpg', // Replace with the correct image path
     },
     {
-      title: "NATIONAL TEAM U15",
+      title: 'NATIONAL TEAM U15',
       description: {
-        en: "Trained with the national team U15 in 2020.",
-        es: "Entrené con la selección nacional U15 en 2020."
+        en: 'Trained with the national team U15 in 2020.',
+        es: 'Entrené con la selección nacional U15 en 2020.',
       },
-      image: "/cr.jpg" // Replace with the correct image path
+      image: '/cr.jpg', // Replace with the correct image path
     },
     {
-      title: "INTERNATIONAL TOURNAMENTS",
+      title: 'INTERNATIONAL TOURNAMENTS',
       description: {
-        en: "Participated in international tournaments: GPS tournament in Puerto Rico 2017, Copa Patrick in Panama 2018, and Ibercup Brasil 2019.",
-        es: "Participé en torneos internacionales: Torneo GPS en Puerto Rico 2017, Copa Patrick en Panamá 2018 e Ibercup Brasil 2019."
+        en: 'Participated in international tournaments: GPS tournament in Puerto Rico 2017, Copa Patrick in Panama 2018, and Ibercup Brasil 2019.',
+        es: 'Participé en torneos internacionales: Torneo GPS en Puerto Rico 2017, Copa Patrick en Panamá 2018 e Ibercup Brasil 2019.',
       },
-      image: "/3.jpg" // Replace with the correct image path
-      },
-    {
-      title: "GPS tournament in Puerto Rico 2017",
-      description: {
-        en: "Played in a professional tournament in Puerto Rico.",
-        es: "Jugué en un torneo profesional en Puerto Rico."
-      },
-      image: "/6.jpg" // Replace with the correct image path
+      image: '/3.jpg', // Replace with the correct image path
     },
     {
-      title: "PRE-SEASON PREPARATION",
+      title: 'GPS tournament in Puerto Rico 2017',
       description: {
-        en: "Pre-season preparation with U20 Universidad de Costa Rica in Guatemala.",
-        es: "Preparación de pretemporada con la U20 de la Universidad de Costa Rica en Guatemala."
+        en: 'Played in a professional tournament in Puerto Rico.',
+        es: 'Jugué en un torneo profesional en Puerto Rico.',
       },
-      image: "/5.jpg" // Replace with the correct image path
+      image: '/6.jpg', // Replace with the correct image path
     },
     {
-      title: "COMBINE ACADEMY",
+      title: 'PRE-SEASON PREPARATION',
       description: {
-        en: "Played for a year in Combine Academy soccer in North Carolina, United States. Played UPSL tournament, Premier division.",
-        es: "Jugó durante un año en Combine Academy soccer en Carolina del Norte, Estados Unidos. Jugó el torneo UPSL, división Premier."
+        en: 'Pre-season preparation with U20 Universidad de Costa Rica in Guatemala.',
+        es: 'Preparación de pretemporada con la U20 de la Universidad de Costa Rica en Guatemala.',
       },
-      image: "/8.jpg" // Replace with the correct image path
-    }
+      image: '/5.jpg', // Replace with the correct image path
+    },
+    {
+      title: 'COMBINE ACADEMY',
+      description: {
+        en: 'Played for a year in Combine Academy soccer in North Carolina, United States. Played UPSL tournament, Premier division.',
+        es: 'Jugó durante un año en Combine Academy soccer en Carolina del Norte, Estados Unidos. Jugó el torneo UPSL, división Premier.',
+      },
+      image: '/8.jpg', // Replace with the correct image path
+    },
   ];
 
   useEffect(() => {
@@ -132,11 +132,11 @@ export const AboutMeSlider: React.FC = () => {
   return (
     <section className="relative min-h-screen overflow-hidden bg-black">
       {/* Background Image with Parallax Effect */}
-      <div 
+      <div
         className={`absolute inset-0 transition-transform duration-[1.5s] ease-out ${
-          isTransitioning 
-            ? direction === 'right' 
-              ? '-translate-x-full opacity-0 scale-110' 
+          isTransitioning
+            ? direction === 'right'
+              ? '-translate-x-full opacity-0 scale-110'
               : 'translate-x-full opacity-0 scale-110'
             : 'translate-x-0 opacity-100 scale-100'
         }`}
@@ -152,19 +152,19 @@ export const AboutMeSlider: React.FC = () => {
 
       {/* Content */}
       <div className="relative z-10 flex flex-col justify-center items-center min-h-screen px-4">
-        <div 
+        <div
           className={`max-w-4xl mx-auto text-center transition-all duration-1000 ${
             showText ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'
           }`}
         >
-          <h2 
-            className={`text-5xl md:text-8xl font-bold text-white mb-4 md:mb-8 tracking-wider transition-all duration-1000 ${
+          <h2
+            className={`text-4xl sm:text-6xl md:text-8xl font-bold text-white mb-4 sm:mb-8 tracking-wider transition-all duration-1000 ${
               showTitle ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'
             }`}
           >
             {portfolioItems[activeSlide].title}
           </h2>
-          <p className="text-lg md:text-2xl text-gray-200 leading-relaxed max-w-2xl mx-auto font-light">
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-200 leading-relaxed max-w-2xl mx-auto font-light">
             {portfolioItems[activeSlide].description[language]}
           </p>
         </div>
@@ -179,7 +179,7 @@ export const AboutMeSlider: React.FC = () => {
         >
           <ChevronLeft className="w-6 h-6 sm:w-8 sm:h-8 text-white transform group-hover:-translate-x-1 transition-transform" />
         </button>
-        
+
         <div className="flex gap-2 sm:gap-4">
           {portfolioItems.map((_, index) => (
             <button
